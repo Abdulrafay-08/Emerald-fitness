@@ -1,70 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leg Day Workout Plan - Detailed exercises with timer for building strong legs.">
-    <meta name="keywords" content="leg day workout, leg exercises, squats, lunges, lower body workout">
-    <title>Leg Day Workout | FIT TODAY!</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>FIT TODAY!</h1>
-    </header>
+<div class="container">
+    <section class="workout-content">
+        <h2>Workout Plan</h2>
+        <p>Warm up for 5-10 minutes with light cardio and dynamic stretches. Perform 3-4 sets of each exercise with 60-90 seconds rest between sets.</p>
 
-    <div class="container">
-        <div class="workout-content">
-            <h2>Leg Day Workout Plan</h2>
-            <p>Complete 3 sets of each exercise.</p>
-            <div class="exercise"><input type="checkbox"> Squats - 10-12 reps</div>
-            <div class="exercise"><input type="checkbox"> Lunges - 10 reps per leg</div>
-            <div class="exercise"><input type="checkbox"> Leg Press - 10 reps</div>
-            <div class="exercise"><input type="checkbox"> Calf Raises - 15 reps</div>
+        <div class="exercise">
+            <h3><i class="fas fa-dumbbell card-icon"></i> Squats</h3>
+            <p>10-12 reps</p>
+            <p>Focus on form: Keep your chest up, back straight, and go as low as comfortable.</p>
+        </div>
 
-            <div class="timer">
-                <label>Set Rest Timer (minutes):</label><br>
-                <input type="number" id="timer-min" value="2" min="1">
-                <button onclick="startTimer()">Start Timer</button>
-                <p id="countdown">02:00</p>
-            </div>
+        <div class="exercise">
+            <h3><i class="fas fa-running card-icon"></i> Lunges</h3>
+            <p>10 reps per leg</p>
+            <p>Alternate legs or do one side at a time for balance.</p>
+        </div>
 
+        <div class="exercise">
+            <h3><i class="fas fa-weight-hanging card-icon"></i> Leg Press</h3>
+            <p>10-12 reps</p>
+            <p>Use controlled movement — avoid locking knees at the top.</p>
+        </div>
+
+        <div class="exercise">
+            <h3><i class="fas fa-child card-icon"></i> Calf Raises</h3>
+            <p>15-20 reps</p>
+            <p>Hold at the top for maximum contraction.</p>
+        </div>
+
+        <div class="timer">
+            <h3>Rest Timer</h3>
+            <div id="countdown">02:00</div>
+            <button class="button" onclick="startTimer()">Start Timer</button>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
             <a href="index.html" class="button">Back to Home</a>
         </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 <a href="https://abdulrafay-08.github.io/My-Portfolio/" target="_blank">Abdul Rafay Almani</a></p>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
+    <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+</footer>
 
-    <footer>
-        <p>© 2026 <a href="https://abdulrafay-08.github.io/My-Portfolio/" target="_blank">Abdul Rafay Almani</a></p>
-        <a href="privacy.html">Privacy Policy</a>
-    </footer>
+<script>
+    let timer;
+    let minutes = 2;
+    let seconds = 0;
 
-    <script>
-        function startTimer() {
-            const minutes = parseInt(document.getElementById('timer-min').value);
-            let time = minutes * 60;
-            const countdownEl = document.getElementById('countdown');
-            const interval = setInterval(() => {
-                const mins = Math.floor(time / 60).toString().padStart(2, '0');
-                const secs = (time % 60).toString().padStart(2, '0');
-                countdownEl.textContent = `\( {mins}: \){secs}`;
-                if (time <= 0) {
-                    clearInterval(interval);
-                    playAlarm();
-                    countdownEl.textContent = "Time's Up!";
+    function updateDisplay() {
+        document.getElementById('countdown').textContent = 
+            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+            (seconds < 10 ? "0" + seconds : seconds);
+    }
+
+    function startTimer() {
+        if (timer) clearInterval(timer);
+        minutes = 2;
+        seconds = 0;
+        updateDisplay();
+        timer = setInterval(() => {
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(timer);
+                    alert("Time's up! Great job!");
+                    return;
                 }
-                time--;
-            }, 1000);
-        }
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+            updateDisplay();
+        }, 1000);
+    }
 
-        function playAlarm() {
-            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioCtx.createOscillator();
-            oscillator.type = 'square';
-            oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
-            oscillator.connect(audioCtx.destination);
-            oscillator.start();
-            setTimeout(() => oscillator.stop(), 800);
-        }
-    </script>
-</body>
-</html>
+    updateDisplay(); // Initial display
+</script>
