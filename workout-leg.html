@@ -1,39 +1,48 @@
-<div class="container">
+        <div class="container">
     <section class="workout-content">
         <h2>Workout Plan</h2>
         <p>Warm up for 5-10 minutes with light cardio and dynamic stretches. Perform 3-4 sets of each exercise with 60-90 seconds rest between sets.</p>
 
         <div class="exercise">
             <h3><i class="fas fa-dumbbell card-icon"></i> Squats</h3>
-            <p>10-12 reps</p>
+            <p><strong>10-12 reps</strong></p>
             <p>Focus on form: Keep your chest up, back straight, and go as low as comfortable.</p>
         </div>
 
         <div class="exercise">
-            <h3><i class="fas fa-running card-icon"></i> Lunges</h3>
-            <p>10 reps per leg</p>
-            <p>Alternate legs or do one side at a time for balance.</p>
+            <h3><i class="fas fa-running card-icon"></i> Walking Lunges</h3>
+            <p><strong>10 reps per leg</strong></p>
+            <p>Step forward, lower until both knees are bent at 90°, then push back up. Alternate legs.</p>
         </div>
 
         <div class="exercise">
             <h3><i class="fas fa-weight-hanging card-icon"></i> Leg Press</h3>
-            <p>10-12 reps</p>
+            <p><strong>10-12 reps</strong></p>
             <p>Use controlled movement — avoid locking knees at the top.</p>
         </div>
 
         <div class="exercise">
-            <h3><i class="fas fa-child card-icon"></i> Calf Raises</h3>
-            <p>15-20 reps</p>
-            <p>Hold at the top for maximum contraction.</p>
+            <h3><i class="fas fa-child card-icon"></i> Standing Calf Raises</h3>
+            <p><strong>15-20 reps</strong></p>
+            <p>Rise onto your toes, hold at the top for maximum contraction, then lower slowly.</p>
         </div>
 
+        <div class="exercise">
+            <h3><i class="fas fa-chair card-icon"></i> Romanian Deadlifts</h3>
+            <p><strong>10-12 reps</strong></p>
+            <p>Great for hamstrings — hinge at hips, keep back straight, lower until you feel the stretch.</p>
+        </div>
+
+        <!-- Interactive Rest Timer -->
         <div class="timer">
             <h3>Rest Timer</h3>
             <div id="countdown">02:00</div>
             <button class="button" onclick="startTimer()">Start Timer</button>
+            <button class="button" onclick="resetTimer()" style="margin-left: 15px; background: linear-gradient(45deg, #059669, #10B981);">Reset</button>
         </div>
 
-        <div style="text-align: center; margin-top: 50px;">
+        <!-- Back Button -->
+        <div style="text-align: center; margin-top: 60px;">
             <a href="index.html" class="button">Back to Home</a>
         </div>
     </section>
@@ -49,27 +58,26 @@
     <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
 </footer>
 
+<!-- Timer Script -->
 <script>
     let timer;
     let minutes = 2;
     let seconds = 0;
 
     function updateDisplay() {
-        document.getElementById('countdown').textContent = 
-            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
-            (seconds < 10 ? "0" + seconds : seconds);
+        const mins = minutes < 10 ? "0" + minutes : minutes;
+        const secs = seconds < 10 ? "0" + seconds : seconds;
+        document.getElementById('countdown').textContent = mins + ":" + secs;
     }
 
     function startTimer() {
         if (timer) clearInterval(timer);
-        minutes = 2;
-        seconds = 0;
-        updateDisplay();
         timer = setInterval(() => {
             if (seconds === 0) {
                 if (minutes === 0) {
                     clearInterval(timer);
-                    alert("Time's up! Great job!");
+                    document.getElementById('countdown').textContent = "00:00";
+                    alert("Time's up! Get back to work! 💪");
                     return;
                 }
                 minutes--;
@@ -81,5 +89,13 @@
         }, 1000);
     }
 
-    updateDisplay(); // Initial display
-</script>
+    function resetTimer() {
+        clearInterval(timer);
+        minutes = 2;
+        seconds = 0;
+        updateDisplay();
+    }
+
+    // Initial display
+    updateDisplay();
+            </script>
