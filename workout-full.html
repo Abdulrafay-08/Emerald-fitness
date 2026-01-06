@@ -1,51 +1,56 @@
-<div class="container">
+        <div class="container">
     <section class="workout-content">
         <h2>Workout Plan</h2>
         <p>Warm up for 5-10 minutes. Perform 3-4 sets of each exercise with 60-90 seconds rest.</p>
 
         <div class="exercise">
             <h3><i class="fas fa-dumbbell card-icon"></i> Squats</h3>
-            <div class="checkbox-container">
-                <input type="checkbox" id="full1" onchange="toggleComplete(this, 'full1-label')">
-                <label id="full1-label">10-15 reps per set</label>
-            </div>
+            <p><strong>10-15 reps</strong></p>
             <p>Full lower body compound movement.</p>
+            <label style="display: block; margin-top: 10px; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" style="width: 24px; height: 24px; margin-right: 10px; accent-color: #10B981; vertical-align: middle;">
+                Mark as completed
+            </label>
         </div>
 
         <div class="exercise">
             <h3><i class="fas fa-weight-hanging card-icon"></i> Deadlifts</h3>
-            <div class="checkbox-container">
-                <input type="checkbox" id="full2" onchange="toggleComplete(this, 'full2-label')">
-                <label id="full2-label">8-12 reps per set</label>
-            </div>
+            <p><strong>8-12 reps</strong></p>
             <p>Great for posterior chain (back, glutes, hamstrings).</p>
+            <label style="display: block; margin-top: 10px; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" style="width: 24px; height: 24px; margin-right: 10px; accent-color: #10B981; vertical-align: middle;">
+                Mark as completed
+            </label>
         </div>
 
         <div class="exercise">
             <h3><i class="fas fa-couch card-icon"></i> Bench Press</h3>
-            <div class="checkbox-container">
-                <input type="checkbox" id="full3" onchange="toggleComplete(this, 'full3-label')">
-                <label id="full3-label">10-12 reps per set</label>
-            </div>
+            <p><strong>10-12 reps</strong></p>
             <p>Primary chest and triceps builder.</p>
+            <label style="display: block; margin-top: 10px; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" style="width: 24px; height: 24px; margin-right: 10px; accent-color: #10B981; vertical-align: middle;">
+                Mark as completed
+            </label>
         </div>
 
         <div class="exercise">
             <h3><i class="fas fa-grip-lines card-icon"></i> Bent-Over Rows</h3>
-            <div class="checkbox-container">
-                <input type="checkbox" id="full4" onchange="toggleComplete(this, 'full4-label')">
-                <label id="full4-label">10-12 reps per set</label>
-            </div>
+            <p><strong>10-12 reps</strong></p>
             <p>Targets upper back and lats.</p>
+            <label style="display: block; margin-top: 10px; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" style="width: 24px; height: 24px; margin-right: 10px; accent-color: #10B981; vertical-align: middle;">
+                Mark as completed
+            </label>
         </div>
 
         <div class="exercise">
             <h3><i class="fas fa-running card-icon"></i> Overhead Press</h3>
-            <div class="checkbox-container">
-                <input type="checkbox" id="full5" onchange="toggleComplete(this, 'full5-label')">
-                <label id="full5-label">10-12 reps per set</label>
-            </div>
+            <p><strong>10-12 reps</strong></p>
             <p>Shoulders and upper chest.</p>
+            <label style="display: block; margin-top: 10px; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" style="width: 24px; height: 24px; margin-right: 10px; accent-color: #10B981; vertical-align: middle;">
+                Mark as completed
+            </label>
         </div>
 
         <div class="timer">
@@ -109,13 +114,4 @@
     }
 
     updateDisplay();
-
-    function toggleComplete(checkbox, labelId) {
-        const label = document.getElementById(labelId);
-        if (checkbox.checked) {
-            label.classList.add('completed');
-        } else {
-            label.classList.remove('completed');
-        }
-    }
 </script>
