@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full Body Workout Plan - Complete routine with exercises and timer for overall strength.">
+    <meta name="keywords" content="full body workout, strength training, compound exercises, fitness routine">
+    <title>Full Body Workout | FIT TODAY!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FIT TODAY!</h1>
+    </header>
+
+    <div class="container">
+        <div class="workout-content">
+            <h2>Full Body Workout Plan</h2>
+            <p>Complete 3 sets of each exercise unless specified.</p>
+            <div class="exercise"><input type="checkbox"> Squats - 10-15 reps</div>
+            <div class="exercise"><input type="checkbox"> Stiff Leg Deadlifts - 10-15 reps</div>
+            <div class="exercise"><input type="checkbox"> Seated Calf Raises - 15-20 reps (2 sets)</div>
+            <div class="exercise"><input type="checkbox"> Barbell Bench Press - 10-15 reps</div>
+            <div class="exercise"><input type="checkbox"> Barbell Rows - 10-15 reps</div>
+
+            <div class="timer">
+                <label>Set Rest Timer (minutes):</label><br>
+                <input type="number" id="timer-min" value="2" min="1">
+                <button onclick="startTimer()">Start Timer</button>
+                <p id="countdown">02:00</p>
+            </div>
+
+            <a href="index.html" class="button">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <a href="https://abdulrafay-08.github.io/My-Portfolio/" target="_blank">Abdul Rafay Almani</a></p>
+        <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+    <script>
+        function startTimer() {
+            const minutes = parseInt(document.getElementById('timer-min').value);
+            let time = minutes * 60;
+            const countdownEl = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                const mins = Math.floor(time / 60).toString().padStart(2, '0');
+                const secs = (time % 60).toString().padStart(2, '0');
+                countdownEl.textContent = `\( {mins}: \){secs}`;
+                if (time <= 0) {
+                    clearInterval(interval);
+                    playAlarm();
+                    countdownEl.textContent = "Time's Up!";
+                }
+                time--;
+            }, 1000);
+        }
+
+        function playAlarm() {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioCtx.createOscillator();
+            oscillator.type = 'square';
+            oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
+            oscillator.connect(audioCtx.destination);
+            oscillator.start();
+            setTimeout(() => oscillator.stop(), 800);
+        }
+    </script>
+</body>
+</html>
