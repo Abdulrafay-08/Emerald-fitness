@@ -1,101 +1,137 @@
-        <div class="container">
-    <section class="workout-content">
-        <h2>Workout Plan</h2>
-        <p>Warm up for 5-10 minutes with light cardio and dynamic stretches. Perform 3-4 sets of each exercise with 60-90 seconds rest between sets.</p>
+        
 
-        <div class="exercise">
-            <h3><i class="fas fa-dumbbell card-icon"></i> Squats</h3>
-            <p><strong>10-12 reps</strong></p>
-            <p>Focus on form: Keep your chest up, back straight, and go as low as comfortable.</p>
-        </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leg Day Workout | FIT TODAY!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Blogs <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="blog-leg.html">Leg Day Blog</a></li>
+                        <li><a href="blog-full.html">Full Body Blog</a></li>
+                        <li><a href="blog-cardio.html">Cardio Blog</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Tools <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="workout-leg.html">Leg Day Workout</a></li>
+                        <li><a href="workout-full.html">Full Body Workout</a></li>
+                        <li><a href="workout-cardio.html">Cardio Workout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <h1>Leg Day Workout</h1>
+        <p class="tagline">Build Strength and Power in Your Lower Body</p>
+    </header>
 
-        <div class="exercise">
-            <h3><i class="fas fa-running card-icon"></i> Walking Lunges</h3>
-            <p><strong>10 reps per leg</strong></p>
-            <p>Step forward, lower until both knees are bent at 90°, then push back up. Alternate legs.</p>
-        </div>
+    <div class="container">
+        <section class="workout-content">
+            <h2>Workout Plan</h2>
+            <p>Warm up for 5-10 minutes with light cardio and dynamic stretches. Perform 3-4 sets of each exercise with 60-90 seconds rest between sets.</p>
 
-        <div class="exercise">
-            <h3><i class="fas fa-weight-hanging card-icon"></i> Leg Press</h3>
-            <p><strong>10-12 reps</strong></p>
-            <p>Use controlled movement — avoid locking knees at the top.</p>
-        </div>
+            <div class="exercise">
+                <h3><i class="fas fa-dumbbell card-icon"></i> Squats</h3>
+                <p><strong>10-12 reps</strong></p>
+                <p>Focus on form: Keep your chest up, back straight, and go as low as comfortable.</p>
+            </div>
 
-        <div class="exercise">
-            <h3><i class="fas fa-child card-icon"></i> Standing Calf Raises</h3>
-            <p><strong>15-20 reps</strong></p>
-            <p>Rise onto your toes, hold at the top for maximum contraction, then lower slowly.</p>
-        </div>
+            <div class="exercise">
+                <h3><i class="fas fa-running card-icon"></i> Walking Lunges</h3>
+                <p><strong>10 reps per leg</strong></p>
+                <p>Step forward, lower until both knees are bent at 90°, then push back up. Alternate legs.</p>
+            </div>
 
-        <div class="exercise">
-            <h3><i class="fas fa-chair card-icon"></i> Romanian Deadlifts</h3>
-            <p><strong>10-12 reps</strong></p>
-            <p>Great for hamstrings — hinge at hips, keep back straight, lower until you feel the stretch.</p>
-        </div>
+            <div class="exercise">
+                <h3><i class="fas fa-weight-hanging card-icon"></i> Leg Press</h3>
+                <p><strong>10-12 reps</strong></p>
+                <p>Use controlled movement — avoid locking knees at the top.</p>
+            </div>
 
-        <!-- Interactive Rest Timer -->
-        <div class="timer">
-            <h3>Rest Timer</h3>
-            <div id="countdown">02:00</div>
-            <button class="button" onclick="startTimer()">Start Timer</button>
-            <button class="button" onclick="resetTimer()" style="margin-left: 15px; background: linear-gradient(45deg, #059669, #10B981);">Reset</button>
-        </div>
+            <div class="exercise">
+                <h3><i class="fas fa-child card-icon"></i> Standing Calf Raises</h3>
+                <p><strong>15-20 reps</strong></p>
+                <p>Rise onto your toes, hold at the top for maximum contraction, then lower slowly.</p>
+            </div>
 
-        <!-- Back Button -->
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="index.html" class="button">Back to Home</a>
-        </div>
-    </section>
-</div>
+            <div class="exercise">
+                <h3><i class="fas fa-chair card-icon"></i> Romanian Deadlifts</h3>
+                <p><strong>10-12 reps</strong></p>
+                <p>Great for hamstrings — hinge at hips, keep back straight, lower until you feel the stretch.</p>
+            </div>
 
-<footer>
-    <p>© 2026 <a href="https://abdulrafay-08.github.io/My-Portfolio/" target="_blank">Abdul Rafay Almani</a></p>
-    <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="timer">
+                <h3>Rest Timer</h3>
+                <div id="countdown">02:00</div>
+                <button class="button" onclick="startTimer()">Start Timer</button>
+                <button class="button" onclick="resetTimer()" style="margin-left: 15px; background: linear-gradient(45deg, #059669, #10B981);">Reset</button>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="index.html" class="button">Back to Home</a>
+            </div>
+        </section>
     </div>
-    <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
-</footer>
 
-<!-- Timer Script -->
-<script>
-    let timer;
-    let minutes = 2;
-    let seconds = 0;
+    <footer>
+        <p>© 2026 <a href="https://abdulrafay-08.github.io/My-Portfolio/" target="_blank">Abdul Rafay Almani</a></p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+    </footer>
 
-    function updateDisplay() {
-        const mins = minutes < 10 ? "0" + minutes : minutes;
-        const secs = seconds < 10 ? "0" + seconds : seconds;
-        document.getElementById('countdown').textContent = mins + ":" + secs;
-    }
+    <script>
+        let timer;
+        let minutes = 2;
+        let seconds = 0;
 
-    function startTimer() {
-        if (timer) clearInterval(timer);
-        timer = setInterval(() => {
-            if (seconds === 0) {
-                if (minutes === 0) {
-                    clearInterval(timer);
-                    document.getElementById('countdown').textContent = "00:00";
-                    alert("Time's up! Get back to work! 💪");
-                    return;
+        function updateDisplay() {
+            const mins = minutes < 10 ? "0" + minutes : minutes;
+            const secs = seconds < 10 ? "0" + seconds : seconds;
+            document.getElementById('countdown').textContent = mins + ":" + secs;
+        }
+
+        function startTimer() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(() => {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(timer);
+                        document.getElementById('countdown').textContent = "00:00";
+                        alert("Time's up! Get back to work! 💪");
+                        return;
+                    }
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    seconds--;
                 }
-                minutes--;
-                seconds = 59;
-            } else {
-                seconds--;
-            }
+                updateDisplay();
+            }, 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            minutes = 2;
+            seconds = 0;
             updateDisplay();
-        }, 1000);
-    }
+        }
 
-    function resetTimer() {
-        clearInterval(timer);
-        minutes = 2;
-        seconds = 0;
         updateDisplay();
-    }
-
-    // Initial display
-    updateDisplay();
-            </script>
+    </script>
+</body>
+</html>
