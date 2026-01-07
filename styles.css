@@ -245,3 +245,45 @@ footer a {
     .nav-menu { flex-direction: column; gap: 15px; }
     .dropdown-content { position: static; transform: none; }
     }
+.workout-content {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 50px;
+    margin: 50px 0;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.exercise {
+    background: rgba(16, 185, 129, 0.15);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0;
+    transition: 0.4s ease;
+    border-left: 5px solid #10B981;
+}
+
+.exercise:hover {
+    background: rgba(16, 185, 129, 0.3);
+    transform: translateX(20px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+}
+
+.timer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 30px;
+    border: 3px solid #10B981;
+    text-align: center;
+    margin: 50px 0;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+#countdown {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #34d399;
+    text-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
+    margin: 20px 0;
+}
